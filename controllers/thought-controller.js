@@ -1,5 +1,6 @@
 const {thought, user} = require("../models");
 const thoughtController = {
+
 getAllThought(res, req) {
      Thought.find({})
      .populate({
@@ -31,8 +32,24 @@ getThoughtById({ params }, res) {
 })
      .catch(err => {
          console.log(err);
-         res.sendStatus(400);
+         res.Status(400).json(err);
       });
 }
 
+
+
+
+
+
+
+DeleteReaction({ params }, res) {
+    Thought.findOneAndUpdate(
+      { _id: params.id },
+      { $pull: { reactions: { reactionId: params.reactionId } } },
+      { new: true }
+    )
+      .then((dbThoughtData) => res.json(dbThoughtData))
+      .catch((err) => res.json(err));
+  },
+};
 module.exports = thoughtController;
