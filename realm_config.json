@@ -1,0 +1,8 @@
+{
+    "app_id": "nosql-social-network-api-zoroa",
+    "config_version": 20210101,
+    "name": "NoSQL-Social-Network-API",
+    "location": "US-VA",
+    "provider_region": "aws-us-east-1",
+    "deployment_model": "GLOBAL"
+}
