@@ -1,7 +1,6 @@
 const { Schema, model, Types } = require("mongoose");
 const { format } = require("date-fns");
 
-//creating schema for reactions
 const ReactionSchema = new Schema(
     {
       reactionId: {
