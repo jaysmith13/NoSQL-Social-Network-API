@@ -7,8 +7,10 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+require("dotenv").config();
+console.log(process.env)
 
-app.use(require('./routes'));
+
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/NoSQL-Social-Network-API', {
   useUnifiedTopology: true,  
